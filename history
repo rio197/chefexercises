@@ -1,0 +1,65 @@
+   15  02/09/19 20:46:04 wget https://packages.chef.io/files/stable/chefdk/4.3.13/el/7/chefdk-4.3.13-1.el7.x86_64.rpm
+   19  02/09/19 20:46:04 sudo rpm -ivh chefdk-4.3.13-1.el7.x86_64.rpm 
+  192  02/09/19 20:46:04 chef-client --local-mode ~/chef-repo/cookbooks/webserver/recipes/default.rb --why-run
+  193  02/09/19 20:46:04 chef-client --local-mode --runlist "recipe[webserver::default]" --why-run
+  194  02/09/19 20:46:04 chef-client --local-mode --runlist "recipe[webserver::default]" 
+  195  02/09/19 20:46:04 sudo chef-client --local-mode --runlist "recipe[webserver::default]" 
+  215  02/09/19 20:46:04 chef-client --local-mode --runlist "recipe[webserver::apache]" --why-run
+  255  02/09/19 14:00:03 sudo yum remove -y httpd; sudo rm -rfv /var/www/html/index.html 
+  256  02/09/19 14:00:22 chef-client --local-mode --runlist "recipe[webserver::default,file,apache]" --why-run
+  257  02/09/19 14:01:47 chef-client --local-mode --runlist "recipe[webserver::default],recipe[webserver::file],recipe[webserver::apache]" --why-run
+  258  02/09/19 14:02:00 sudo chef-client --local-mode --runlist "recipe[webserver::default],recipe[webserver::file],recipe[webserver::apache]" 
+  289  02/09/19 14:12:21 sudo chef-client --local-mode --runlist "recipe[webserver::default],recipe[webserver::file],recipe[webserver::apache]" 
+  370  02/09/19 20:01:27 yum provides unzip
+  371  02/09/19 20:01:39 sudo yum install -y unzip
+  372  02/09/19 20:01:45 unzip chef-starter.zip 
+  373  02/09/19 20:02:07 cd chef-repo/
+  374  02/09/19 20:02:09 ls -trlha
+  375  02/09/19 20:02:25 sudo chown centos: .chef/
+  376  02/09/19 20:02:29 cd ~
+  377  02/09/19 20:02:31 unzip chef-starter.zip 
+  378  02/09/19 20:03:43 cd chef-repo/
+  379  02/09/19 20:03:44 ls -trlh
+  380  02/09/19 20:03:49 find cookbooks/
+  381  02/09/19 20:03:55 pwd
+  382  02/09/19 20:03:56 ls -trlha
+  383  02/09/19 20:03:58 cd ../
+  384  02/09/19 20:03:59 ls -trlha
+  385  02/09/19 20:04:02 cd chef-repo/
+  386  02/09/19 20:04:03 ls -trlha
+  387  02/09/19 20:04:09 find .chef/
+  396  02/09/19 20:07:40 knife ssl fetch
+  397  02/09/19 20:08:13 knife ssl check
+  398  02/09/19 20:09:11 knife node list
+  404  02/09/19 20:10:36 knife cookbook list
+  405  02/09/19 20:10:53 knife cookbook upload starter
+  440  02/09/19 20:24:41 knife bootstrap 172.31.27.45 -N client.example.com --ssh-user centos --sudo -i  ~/downloads/id_rsa_ 
+  441  02/09/19 20:25:09 knife node list
+  447  02/09/19 20:31:06 knife ssl check
+  460  02/09/19 20:40:55 knife cookbook upload ntpserver
+  463  02/09/19 20:41:07 knife cookbook upload ntpserver
+  464  02/09/19 20:41:56 knife cookbook upload webserver
+  475  02/09/19 20:48:05 knife node list
+  476  02/09/19 20:48:21 knife node show client.example.com
+  477  02/09/19 20:48:31 knife node show $()
+  478  02/09/19 20:48:34 knife node show $(knife node list)
+  479  02/09/19 20:48:41 knife node show $(knife node 
+  480  02/09/19 20:48:44 knife node show 
+  481  02/09/19 20:48:49 knife node show $(knife node list)
+  482  02/09/19 20:49:09 chef generate cookbook motd
+  484  02/09/19 20:49:17 cd motd/recipes/
+  486  02/09/19 20:49:47 vi default.rb 
+  487  02/09/19 20:50:51 cookstyle ~/chef-repo/cookbooks/motd/
+  494  02/09/19 20:51:39 cookstyle ~/chef-repo/cookbooks/motd/
+  495  02/09/19 20:52:12 chef-client --local-mode --runlist "recipe[motd]" --why-run
+  496  02/09/19 20:52:24 sudo chef-client --local-mode --runlist "recipe[motd]" 
+  497  02/09/19 20:52:41 cat /etc/motd 
+  498  02/09/19 20:52:52 cat motd/recipes/default.rb 
+  499  02/09/19 20:53:40 knife node run_list add client.example.com "recipe[motd]"
+  500  02/09/19 20:53:52 knife node show $(knife node list)
+  502  02/09/19 20:54:43 knife cookbook list
+  503  02/09/19 20:54:53 knife cookbook upload motd
+  504  02/09/19 20:56:36 knife ssh --ssh-user centos -i ~/downloads/id_rsa_ 'name:client.example.com' 'sudo chef-client --why-run'
+  505  02/09/19 20:57:00 knife ssh --ssh-user centos -i ~/downloads/id_rsa_ 'name:client.example.com' 'sudo chef-client'
+  508  02/09/19 21:00:17 ohai kernel
+  509  02/09/19 21:00:29 ohai kernel/release
